@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+github_store_url_prefix="https://raw.githubusercontent.com/ZhiyaoTang/md.img/master/"
+directory="/Users/don/Downloads/git_repository/markdown_images"
+curr_path=$(pwd)
+
+file_name="$1"
+if [ ! "$1" ]; then
+	echo "no input, exit."
+	exit 0
+elif [ "$curr_path" =  "$directory" ]; then
+	md_image_path=$github_store_url_prefix$file_name
+	echo $md_image_path | pbcopy
+	echo $md_image_path
+	echo "url copied to the clipboard!"
+	exit 0
+fi
+
+directory=$directory"/"
+curr_path=$curr_path"/"
+
+md_image_path=$github_store_url_prefix${curr_path#$directory}$file_name
+
+echo $md_image_path | pbcopy
+echo $md_image_path
+echo "url copied to the clipboard!"

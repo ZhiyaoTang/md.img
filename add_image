@@ -1,6 +1,6 @@
 #!/bin/zsh
 github_store_url_prefix="https://raw.githubusercontent.com/ZhiyaoTang/md.img/master/"
-directory="/Users/don/Downloads/git_repository/markdown_images"
+directory="/Users/don/Downloads/Code/git_repository/markdown_images"
 curr_path=$(pwd)
 
 file_name="$1"
